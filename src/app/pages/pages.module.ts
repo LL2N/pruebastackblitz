@@ -6,7 +6,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: "pages",
+    path: " ",
     component: PagesComponent,
     children: [
       { path: "", redirectTo: "nyc", pathMatch: "full" },
