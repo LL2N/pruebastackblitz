@@ -4,15 +4,16 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
- {path: '', redirectTo: 'pages', pathMatch: 'full'}
+ {path: '', redirectTo: 'pages', pathMatch: 'full'},
+ {path: 'pages', component: PagesComponent}
 ];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, PagesComponent],
+  imports:      [ BrowserModule, FormsModule, RouterModule.forChild(routes)],
+  declarations: [ AppComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

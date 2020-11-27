@@ -8,9 +8,9 @@ const routes: Routes = [
     component: PagesComponent,
     children: [
       {path: '', redirectTo: 'nyc', pathMatch: 'full'},
-      {path: 'nyc', loadChildren: () => import('./nyc/nyc.module').then(m => m.NYCModule)},
-      {path: 'rutas', loadChildren: () => import('./rutas/rutas.module').then(m => m.AdminModule)},
-      {path: 'sobre-lpb', loadChildren: () => import('./sobre-lpb/sobre-lpb.module').then(m => m.ListModule)}
+      {path: 'nyc', loadChildren: () => import('./nyc/nyc.module').then(m => m.NycModule)},
+      {path: 'rutas', loadChildren: () => import('./rutas/rutas.module').then(m => m.RutasModule)},
+      {path: 'sobre-lpb', loadChildren: () => import('./sobre-lpb/sobre-lpb.module').then(m => m.SobreLPBModule)}
     ]
   }
 ];

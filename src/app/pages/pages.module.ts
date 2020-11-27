@@ -8,7 +8,7 @@ import {PagesComponent} from './pages.component';
   imports: [
     CommonModule, PagesRoutingModule
   ],
-  declarations: [
+  declarations: [ PagesComponent
     ]
 })
 export class PagesModule { }
