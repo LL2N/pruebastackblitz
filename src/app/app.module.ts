@@ -14,7 +14,7 @@ const routes: Routes = [
 @NgModule({
   imports:      [ 
     BrowserModule, 
-    RouterModule.forChild(routes)],
+    RouterModule.forRoot(routes)],
   declarations: [ AppComponent],
   bootstrap:    [ AppComponent ]
 })
