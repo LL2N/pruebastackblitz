@@ -16,8 +16,7 @@ const routes: Routes = [
       },
       {
         path: "rutas",
-        loadChildren: () =>
-          import("./rutas/rutas.module").then(m => m.RutasModule)
+        loadChildren: () => import("./rutas/rutas.module").then(m => m.RutasModule)
       },
       {
         path: "sobre-lpb",
