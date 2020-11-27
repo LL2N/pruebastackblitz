@@ -1,19 +1,29 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import {PagesRoutingModule} from './pages-routing.module';
-import {PagesComponent} from './pages.component';
-import { Routes, RouterModule } from '@angular/router';
+import { PagesComponent } from "./pages.component";
+import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "pages",
     component: PagesComponent,
     children: [
-      {path: '', redirectTo: 'nyc', pathMatch: 'full'},
-      {path: 'nyc', loadChildren: () => import('./nyc/nyc.module').then(m => m.NycModule)},
-      {path: 'rutas', loadChildren: () => import('./rutas/rutas.module').then(m => m.RutasModule)},
-      {path: 'sobre-lpb', loadChildren: () => import('./sobre-lpb/sobre-lpb.module').then(m => m.SobreLPBModule)}
+      { path: "", redirectTo: "nyc", pathMatch: "full" },
+      {
+        path: "nyc",
+        loadChildren: () => import("./nyc/nyc.module").then(m => m.NycModule)
+      },
+      {
+        path: "rutas",
+        loadChildren: () =>
+          import("./rutas/rutas.module").then(m => m.RutasModule)
+      },
+      {
+        path: "sobre-lpb",
+        loadChildren: () =>
+          import("./sobre-lpb/sobre-lpb.module").then(m => m.SobreLPBModule)
+      }
     ]
   }
 ];
@@ -21,11 +31,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule, 
-    PagesRoutingModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ 
-    PagesComponent
-    ]
+  declarations: [PagesComponent]
 })
-export class PagesModule { }
+export class PagesModule {}

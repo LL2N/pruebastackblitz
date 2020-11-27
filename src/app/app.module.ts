@@ -12,7 +12,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, RouterModule.forChild(routes)],
+  imports:      [ 
+    BrowserModule, 
+    RouterModule.forChild(routes)],
   declarations: [ AppComponent],
   bootstrap:    [ AppComponent ]
 })
