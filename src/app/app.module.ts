@@ -8,7 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
  {path: '', redirectTo: 'pages', pathMatch: 'full'},
- {path: 'pages', loadChildren: () => import("./pages/pages.module").then(m => m.PagesModule)}
+ {path: 'pages', component: PagesComponent /*loadChildren: () => import("./pages/pages.module").then(m => m.PagesModule)*/}
 ];
 
 @NgModule({

@@ -6,7 +6,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: " ",
+    path: "",
     component: PagesComponent,
     children: [
       { path: "", redirectTo: "nyc", pathMatch: "full" },
@@ -32,6 +32,7 @@ const routes: Routes = [
     CommonModule, 
     RouterModule.forChild(routes)
   ],
+  exports: [RouterModule],
   declarations: [PagesComponent]
 })
 export class PagesModule {}
