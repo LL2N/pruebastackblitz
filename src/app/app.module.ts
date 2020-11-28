@@ -10,17 +10,17 @@ const routes: Routes = [
   { path: "", redirectTo: "pages", pathMatch: "full" },
   {
     path: "pages",
-    loadChildren: () =>
+    component: PagesComponent
+    /*loadChildren: () =>
       import("./pages/pages.module").then(
         m => m.PagesModule
-      ) /*component: PagesComponent */
+      )*/ /*component: PagesComponent */
   }
 ];
 
 @NgModule({
-  imports: [BrowserModule, RouterModule.forRoot(routes), StoreModule.forRoot(reducers, {metaReducers}),
-    EffectsModule.forRoot([])],
-  exports: [RouterModule],,
+  imports: [BrowserModule, RouterModule.forRoot(routes)], 
+  exports: [RouterModule],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
 })
