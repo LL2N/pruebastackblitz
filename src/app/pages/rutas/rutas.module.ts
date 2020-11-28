@@ -5,10 +5,35 @@ import { TarifasComponent } from './tarifas/tarifas.component';
 import { RutahorariosComponent } from './rutahorarios/rutahorarios.component';
 import { ListaComponent } from './lista/lista.component';
 import { RutasComponent } from './rutas.component';
+import { Routes, RouterModule } from "@angular/router";
+
+const routes: Routes = [
+  {
+    path: "",
+    component: RutasComponent,
+    children: [
+      { path: "", redirectTo: "lista", pathMatch: "full" },
+      {
+        path: "lista",
+        loadChildren: () => import("./lista/lista.module").then(m => m.ListaModule)
+      },
+      {
+        path: "horarios",
+        loadChildren: () => import("./horarios/horarios.module").then(m => m.HorariosModule)
+      },
+      {
+        path: "tarifas",
+        loadChildren: () =>
+          import("./tarifas/tarifas.module").then(m => m.TarifasModule)
+      }
+    ]
+  }
+];
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes)
   ],
   declarations: [RutasComponent, TarifasComponent, RutahorariosComponent, ListaComponent]
 })
