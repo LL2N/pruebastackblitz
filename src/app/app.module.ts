@@ -18,7 +18,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, RouterModule.forRoot(routes), StoreModule.forRoot(reducers, {metaReducers}),
+    EffectsModule.forRoot([])],
+  exports: [RouterModule],,
   declarations: [AppComponent],
   bootstrap: [AppComponent]
 })
